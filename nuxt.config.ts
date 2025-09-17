@@ -1,11 +1,8 @@
 export default defineNuxtConfig({
   ssr: true,
   compatibilityDate: "2025-09-17",
-  devtools: { enabled: true },
-
   modules: ["@nuxtjs/tailwindcss"],
   css: ["~/assets/css/tailwind.css"],
-
   runtimeConfig: {
     apiSecret: process.env.API_SECRET || "dev-secret",
     public: {
@@ -16,7 +13,6 @@ export default defineNuxtConfig({
       appAuthor: process.env.NUXT_PUBLIC_APP_AUTHOR || "unknown",
     },
   },
-
   build: { transpile: ["vuetify"] },
   vite: { define: { "process.env.DEBUG": false } },
 });
