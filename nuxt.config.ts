@@ -1,26 +1,3 @@
-// nuxt.config.ts
-import { existsSync } from "node:fs";
-import { fileURLToPath } from "node:url";
-import { dirname, resolve } from "node:path";
-import { config as dotenv } from "dotenv";
-
-// Resolve project root
-const __filename = fileURLToPath(import.meta.url);
-const __dirname = dirname(__filename);
-const root = __dirname; //  at project root level
-
-const mode = process.env.NODE_ENV || "development";
-
-// Load in this precedence
-const envFiles = [".env", `.env.${mode}`, ".env.local", `.env.${mode}.local`];
-
-for (const name of envFiles) {
-  const path = resolve(root, name);
-  if (existsSync(path)) {
-    dotenv({ path });
-  }
-}
-
 export default defineNuxtConfig({
   ssr: true,
   compatibilityDate: "2025-09-17",

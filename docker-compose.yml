@@ -1,0 +1,19 @@
+version: "3.9"
+
+services:
+  web:
+    build: .
+    container_name: nuxt-ssr
+    ports:
+      - "3000:3000"
+    environment:
+      #  public (client + server)
+      NUXT_PUBLIC_APP_TITLE: "Nuxt 3 SSR (Compose)"
+      NUXT_PUBLIC_APP_DESCRIPTION: "SSR shell with runtime env from compose"
+      NUXT_PUBLIC_APP_VERSION: "1.0.0"
+      NUXT_PUBLIC_APP_AUTHOR: "Santa"
+      # If you DON'T use the legacy api, point to self
+      NUXT_PUBLIC_API_BASE: "http://localhost:3000"
+
+      #  server-only
+      API_SECRET: "compose-secret-123"
