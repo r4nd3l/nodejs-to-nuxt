@@ -29,3 +29,17 @@ NUXT_PUBLIC_APP_AUTHOR=development Kolbas
 API_SECRET=dev-secret-123
 
 ```
+
+#### Links to debug
+
+`http://[::]:3000/`
+
+`http://localhost:3000/`
+
+`http://localhost:3000/api/config`
+
+`http://localhost:3000/api/env`
+
+`http://localhost:3000/api/env-mode`
+
+`http://localhost:3000/api/ls`
