@@ -1,6 +1,15 @@
 <script setup lang="ts">
+import type { ConfigResponse } from "~/types/api";
+
 const config = useRuntimeConfig();
-const { data } = await useFetch("/api/config", { server: true });
+const { data, error } = await useFetch<ConfigResponse>("/api/config", {
+  server: true,
+});
+
+// Handle potential errors
+if (error.value) {
+  console.error("Failed to fetch config:", error.value);
+}
 </script>
 
 <template>
